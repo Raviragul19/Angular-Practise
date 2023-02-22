@@ -1,0 +1,156 @@
+<div>
+  <hr />
+  <!-- name is dynamic which is come from app component -->
+  <p>
+    Hi this is <b>{{ name }} </b>from first component
+  </p>
+  <p>
+    Addition of 5 + 20 is <b>{{ 5 + 20 }}</b>
+  </p>
+
+  <!-- string concat with name -->
+  <p>{{ "Who is owner of this site? " + name }}</p>
+  <!-- displaying length of input name-->
+  <p>{{ "length of name input " + name.length }}</p>
+  <hr />
+  <input type="text" [value]="name" [disabled]="disabled" />
+
+  <hr />
+  <!-- here when we set true the class will added with css style if set to false the css style class will not add -->
+  <p [class.bind]="true">This is <b>class binding</b></p>
+  <!-- here we are passing a variable which is set to boolean values -->
+  <p [class.bind]="disabled">This is <b>class binding</b></p>
+
+  <hr />
+  <!-- in line style binding -->
+  <p style="color: goldenrod">This is <b>style binding</b></p>
+  <!-- one type of style binding -->
+  <p [style.color]="'goldenrod'">This is <b>style binding</b></p>
+  <!-- changing font by passing string -->
+  <p [style.fontSize]="'10px'">This is <b>style binding in font</b></p>
+  <!-- changing font by passing pixels -->
+  <p [style.fontSize.px]="10">This is <b>style binding in font</b></p>
+  <!-- second type of style binding by object -->
+  <p
+    [style]="{
+      color: 'red',
+      fontSize: '15px'
+    }"
+  >
+    This is style binding in font using object
+  </p>
+
+  <hr />
+  <!-- event binding -->
+  <input type="text" (keypress)="typedLength($event)" />
+  <!-- on one click -->
+  <!-- <button (click)="buttonClick()">click me</button> -->
+  <!-- on dible click -->
+  <button>click me</button>
+
+  <hr />
+  <!-- one way binding which change in only one side  -->
+  <input type="text" [value]="name" />
+  <button>click me</button>
+  <p>{{ name }}</p>
+  <!-- Two way binding which wi -->
+  <input type="text" [(ngModel)]="name" />
+  <p>{{ name }}</p>
+</div>
+<hr />
+
+<h2>Structural directives</h2>
+<h3>Built in directives</h3>
+<h4>*nf If</h4>
+<div>
+  <p *ngIf="true; else elseBlock">if</p>
+  <ng-template #elseBlock> else </ng-template>
+</div>
+<div *ngIf="animal[0] == 'dog'; else falseblock">
+  <p>{{ animal[0] }} is present in animal list</p>
+</div>
+<ng-template #falseblock>
+  <p>{{ animal[0] }} is not present in animal list</p>
+</ng-template>
+
+<div *ngIf="animal[1] == 'cat'; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+  <p>{{ animal[1] }} is present in animal list</p>
+</ng-template>
+<ng-template #elseBlock>
+  <p>{{ animal[1] }} is not present in animal list</p>
+</ng-template>
+
+<hr />
+<h4>ngSwitchCase</h4>
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'red'">red color case is executed</p>
+  <p *ngSwitchCase="'blue'">blue color case is executed</p>
+  <p *ngSwitchDefault>Default case is executed</p>
+</div>
+
+<hr />
+<div *ngFor="let key of animal">
+  <p>{{ key }}</p>
+</div>
+<div *ngFor="let key of animal; index as i">
+  <p>Index {{ i }} = Value {{ key }}</p>
+</div>
+
+<!-- To find which is first element -->
+<div *ngFor="let key of animal; first as i">
+  <p>{{ key }} is first element? {{ i }}</p>
+</div>
+
+<!-- To find which is last element -->
+<div *ngFor="let key of animal; last as i">
+  <p>{{ key }} is last element? {{ i }}</p>
+</div>
+
+<!-- To find odd element -->
+<div *ngFor="let key of animal; odd as i">
+  <p>{{ key }} is odd element? {{ i }}</p>
+</div>
+
+<hr />
+<div>
+  <p>{{ name }}</p>
+  <p>{{ name | lowercase }}</p>
+  <p>{{ name | uppercase }}</p>
+  <!-- In title case the first char of each word will be move to upper case -->
+  <p>{{ message | titlecase }}</p>
+  <p>{{ details | json }}</p>
+  <p>{{ details.name }}</p>
+
+  <hr />
+  <!-- Pipes -->
+  <p>{{ 3.6 | number : "1.0-0" }}</p>
+  <p>{{ 3.4 | number : "1.0-0" }}</p>
+  <p>{{ 12.345 | number : "1.5-6" }}</p>
+  <p>{{ 1.2345 | number : "1.2-3" }}</p>
+  <p>{{ 1.2346 | number: '1.2-3' }}</p>
+
+  <p>{{ 0.25 | currency }}</p>
+  <p>{{ 0.25 | currency : "GBP" }}</p>
+  <p>{{ 0.25 | percent }}</p>
+
+  <p>{{ date }}</p>
+  <p>{{ date | date : "short" }}</p>
+  <p>{{ date | date : "shortDate" }}</p>
+  <p>{{ date | date : "shortTime" }}</p>
+</div>
+<hr />
+
+<div [ngClass]="'first'">
+  <h3>ng class via static</h3>
+</div>
+<div >
+  <button [ngClass]="dynamicngClass" (click)="changecolor()">Hello</button>
+</div>
+<div [ngClass]="['first',dynamicngClass]">
+<p>Array of ng class</p>
+</div>
+
+<div [ngStyle]="{color:'orange'}">
+ <h3>ng style</h3>
+</div>
