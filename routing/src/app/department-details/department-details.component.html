@@ -1,0 +1,13 @@
+<div>
+  <h3>You have selected department id={{ deptId }}</h3>
+  <div>
+    <button (click)="firstChild()">child1</button>
+    <button (click)="secondChild()">child2</button>
+  </div>
+  <router-outlet></router-outlet>
+  <button (click)="previous()">Previous</button>
+  <button (click)="next()">Next</button>
+</div>
+<div>
+  <button (click)="gotodepartments()">back</button>
+</div>

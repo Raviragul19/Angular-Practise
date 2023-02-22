@@ -1,0 +1,12 @@
+<h2>Students List</h2>
+<div>
+  <li *ngFor="let key of students">
+    <button>
+      <span>id = {{ key.id }}, </span>dept : {{ key.name }}
+    </button>
+  </li>
+</div>
+<br />
+<div>
+  <button (click)="gotohome()">back</button>
+</div>

@@ -1,0 +1,8 @@
+<h2>Department List</h2>
+<ul>
+  <li (click)="onselect(key)" *ngFor="let key of departments">
+    <button>
+      <span>id = {{ key.id }}, </span>dept : {{ key.name }}
+    </button>
+  </li>
+</ul>
