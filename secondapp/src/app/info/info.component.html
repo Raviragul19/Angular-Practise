@@ -1,0 +1,19 @@
+<div>
+  <div>
+    <button type="button" (click)="getInfoFromService1()" (dblclick)="clear()">
+      Employee 1</button
+    ><br /><br />
+    <button type="button" (click)="getInfoFromService2()" (dblclick)="clear()">
+      Employee 2</button
+    ><br /><br />
+    <button type="button" (click)="getInfoFromService3()" (dblclick)="clear()">
+      Employee 3
+    </button>
+  </div>
+  <div style="display: flex; justify-content: center">
+    <ul>
+      <li *ngFor="let key of infoReceive1" class="groupInfo">{{ key }}</li>
+    </ul>
+  </div>
+</div>
+
