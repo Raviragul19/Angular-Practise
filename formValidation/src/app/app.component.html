@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <h1>forms</h1>
+  <form #userForm="ngForm">
+    {{ userForm.form.valid }}
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        required
+        #name="ngModel"
+        [class.is-invalid]="name.invalid && name.touched"
+        class="form-control"
+        name="name"
+        [(ngModel)]="userDetails.name"        
+      />
+
+      <!-- In <small [class.d-none]="name.valid || name.untouched">name required</small> statement the message will be displayed appropiately 
+      instead we are displaying as like error message by using class danger bootstrap class-->
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched"
+        >name required</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label> email</label>
+      <input
+        type="text"
+        required
+        #email="ngModel"
+        [class.is-invalid]="email.invalid && email.touched"
+        class="form-control"
+        name="email"
+        [(ngModel)]="userDetails.email"
+      />
+      <small class="text-danger" [class.d-none]="email.valid || email.untouched"
+        >email required</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        type="password"
+        required
+        #pass="ngModel"
+        [class.is-invalid]="pass.invalid && pass.touched"
+        class="form-control"
+        name="password"
+        [(ngModel)]="userDetails.password"
+      />
+      <small class="text-danger" [class.d-none]="pass.valid || pass.untouched"
+        >password required</small
+      >
+    </div>
+
+    <button
+      [disabled]="userForm.form.invalid"
+      class="btn btn-primary"
+      type="'submit"
+      (click)="showdetails()"
+    >
+      Submit
+    </button>
+  </form>
+</div>
