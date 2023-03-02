@@ -1,0 +1,17 @@
+<div class="deleteDialog">
+<h1 class="headColor">Are you sure?</h1>
+<div mat-dialog-actions >
+  <button
+    mat-raised-button
+    color="primary"
+    [mat-dialog-close]
+   (click)="inputData()"
+    class="btn btn-primary"
+  >
+  Delete
+  </button>
+  <button mat-stroked-button color="warn" (click)="onNoClick()" cdkFocusInitial>
+    Cancel
+  </button>
+</div>
+</div>
