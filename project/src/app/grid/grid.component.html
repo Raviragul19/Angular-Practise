@@ -1,0 +1,26 @@
+<p class="heading"><b>Grid Veiw </b> <br /><br /></p>
+<div class="grid-container">
+  <div class="grid-item" *ngFor="let item of items">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ item.name }}</mat-card-title>
+        <mat-card-subtitle>{{ item.native }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{ item.avatar }}" />
+
+      <mat-card-content>
+        {{ item.id }}
+      </mat-card-content>
+      <mat-card-actions> </mat-card-actions>
+    </mat-card>
+    <br />
+    <div class="menuAlign">
+      <app-menu
+        [id]="item.id"
+        [name]="item.name"
+        [native]="item.native"
+      ></app-menu>
+    </div>
+  </div>
+</div>

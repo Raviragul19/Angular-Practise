@@ -1,0 +1,43 @@
+<div>
+  <p class="heading"><b>List Veiw </b></p>
+
+  <br />
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="avatar">
+      <th mat-header-cell *matHeaderCellDef>avatar</th>
+      <td mat-cell *matCellDef="let element">
+        <img mat-card-image src="{{ element.avatar }}" />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="native">
+      <th mat-header-cell *matHeaderCellDef>native</th>
+      <td mat-cell *matCellDef="let element">{{ element.native }}</td>
+    </ng-container>
+    <ng-container matColumnDef="menu">
+      <th mat-header-cell *matHeaderCellDef>menu</th>
+      <td mat-cell *matCellDef="let element">
+        <app-menu
+          [id]="element.id"
+          [name]="element.name"
+          [native]="element.native"
+        ></app-menu>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

@@ -1,0 +1,33 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .grid-item {
+    background-color: grey;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 5px;
+  
+
+  }
+ .menuAlign{
+    margin-left: 12em;
+   
+ }
+ .heading{
+    text-align: center;
+     color: black;
+     text-align: center;
+     
+  }
+  .button{
+    float: right;
+   
+  }
+  .example-card{
+    display:flex;
+    align-items: center;
+  }

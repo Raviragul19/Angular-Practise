@@ -1,0 +1,46 @@
+.head {
+  background-color: white;
+}
+.sid {
+  background-color: rgb(136, 136, 221);
+}
+.cont {
+  width: 300px;
+  margin-top: 22px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 25px;
+  margin-bottom: 2px;
+}
+
+li {
+  list-style: none;
+  margin: 10px;
+  text-align: center;
+  a {
+    b{
+   
+    color: black;}
+  }
+}
+.tog {
+  float: right;
+  margin: 20px;
+  p {
+    color: white;
+    margin: 10px;
+    margin-bottom: 10px;
+  }
+}
+.active {
+  background-color: rgb(32, 250, 232);
+  font-weight: bolder;
+  
+}
+.main {
+  background-color: white;
+  max-height: 810px;
+  overflow: scroll;
+}
+
+
