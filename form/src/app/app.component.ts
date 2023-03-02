@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import { User } from './user';
+
 
 @Component({
   selector: 'app-root',
@@ -9,5 +11,7 @@ import { User } from './user';
 export class AppComponent {
  
   areas=['Angular','React','Springboot'];
+
   userDetails=new User('Ravi','ravi@gmail','ravi123');
+
 }

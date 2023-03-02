@@ -1,4 +1,5 @@
 <div class="container-fluid">
+
   <h1>forms</h1>
   <form #userForm="ngForm">
 
@@ -37,6 +38,22 @@
         name="password"
         [(ngModel)]="userDetails.password"
       />
+
+<h1>forms</h1>
+<form  #userForm="ngForm">
+    {{userForm .value| json}}
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" ngModel>
+    </div>
+    <div class="form-group">
+        <label > email</label>
+        <input type="text" class="form-control" name="email" ngModel>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" ngModel>
+
     </div>
     <!-- <div class="form-group">
         <select class="custom-select">
@@ -44,6 +61,7 @@
             <option *ngFor="let key of areas">{{key}}</option>
         </select>
     </div> -->
-    <button class="btn btn-primary" type="'submit">Submit</button>
-  </form>
-</div>
+
+<button class="btn btn-primary" type="'submit">Submit </button>
+</form></div>
+
