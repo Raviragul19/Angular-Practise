@@ -28,7 +28,8 @@
       </mat-form-field>
   
       <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Native</mat-label>
+        <mat-label>City</mat-label>
+        <mat-icon matSuffix> home_pin</mat-icon>
         <input
           matInput
           placeholder="city"
@@ -39,8 +40,8 @@
         />
         <div
           *ngIf="
-            registeration.get('native')?.invalid &&
-            registeration.get('native')?.touched
+            registeration.get('city')?.invalid &&
+            registeration.get('city')?.touched
           "
         >
           <small class="text-danger">native required</small>
