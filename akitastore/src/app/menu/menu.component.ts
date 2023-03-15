@@ -12,13 +12,16 @@ export class MenuComponent {
   @Input() id: number = 0;
   @Input() name: string = '';
   @Input() city: string = '';
+  @Input() department: string = '';
 
   constructor(private input: MatDialog) {}
+
   openEdit() {
     const dialogRef = this.input.open(AddComponent, {
-      data: { id: this.id, name: this.name, city: this.city },
-    });
+      data: { id: this.id, name: this.name, city: this.city ,department: this.department },
+    });    
   }
+
   openDelete() {
     const dialogRef = this.input.open(DeleteComponent, {
       data: { id: this.id },

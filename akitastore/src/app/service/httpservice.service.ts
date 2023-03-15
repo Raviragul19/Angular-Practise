@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-export interface addType {
-  id: number;
-  city: string | null | undefined;
-  name: string | null | undefined;
-}
+import { Students } from '../studentsdata';
+import { addType } from './dataservice.service';
 
 @Injectable({
   providedIn: 'root',
@@ -17,12 +13,12 @@ export class HttpserviceService {
     return this.http.get(this.url);
   }
   addData(details: addType) {
-    return this.http.post(this.url, details);
+    return this.http.post<Students>(this.url, details);
   }
-  editData(details: any) {
-    return this.http.put(`${this.url}/${details.id}`, details);
+  editData(details: Students) {
+    return this.http.put<Students>(`${this.url}/${details.id}`, details);
   }
-  deleteData(details: any) {
-    return this.http.delete(`${this.url}/${details}`, details);
+  deleteData(details: number) {
+    return this.http.delete<Students>(`${this.url}/${details}`);
   }
 }

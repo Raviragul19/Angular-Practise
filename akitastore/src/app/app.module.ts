@@ -18,7 +18,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { DeleteComponent } from './delete/delete.component';
 import { MatInputModule } from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SearchComponent } from './search/search.component'; 
+import {MatSelectModule} from '@angular/material/select'; 
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MenuComponent,
     AddComponent,
     DeleteComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatFormFieldModule,
     MatInputModule,
     MatToolbarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

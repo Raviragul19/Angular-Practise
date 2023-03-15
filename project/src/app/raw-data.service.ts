@@ -25,9 +25,8 @@ export class RawDataService {
   }
 
   addRawData(user: editType) {
-    console.log(user);
-
-    this.dataService
+        console.log(user);
+       this.dataService
       .addData(user)
       .pipe(
         tap((user) => {

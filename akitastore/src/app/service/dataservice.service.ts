@@ -2,49 +2,59 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { HttpserviceService } from './httpservice.service';
 import { ListStore } from '.././state/store';
+import { Students } from '../studentsdata';
+
+export interface addType {
+  city: string | null | undefined;
+  name: string | null | undefined;
+  department:string | null | undefined;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataserviceService {
-  //public users: BehaviorSubject<any> = new BehaviorSubject(null);
-  //public userObservable$: Observable<any> = this.users.asObservable();
-
   constructor(
     private dataService: HttpserviceService,
     private store: ListStore
   ) {}
+
   getRawData() {
     this.dataService
       .getData()
       .pipe(tap((user: any) => this.store.set(user)))
       .subscribe();
   }
-  addRawData(details: any) {
+
+  addRawData(details: addType) {
     this.dataService
       .addData(details)
-      .pipe(tap((user: any) => this.store.add(user)))
+      .pipe(tap((user: Students) => this.store.add(user)))
       .subscribe();
   }
-  editRawData(user: any) {
+
+  editRawData(user: Students) {
+    console.log(user);
     this.dataService
       .editData(user)
       .pipe(
-        tap((user: any) => {
+        tap((user: Students) => {
           this.store.upsert(user.id, user);
-          console.log(this.store);
         })
       )
       .subscribe();
   }
-  deleteRawData(user: any) {
+
+  deleteRawData(user: number) {
     this.dataService
       .deleteData(user)
       .pipe(
-        tap((user: any) => {
-          this.store.remove(user.id);
+        tap(() => {
+          this.store.remove(user);
         })
       )
       .subscribe();
   }
+
+  
 }

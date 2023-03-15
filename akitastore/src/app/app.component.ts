@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AddComponent } from './add/add.component';
 
@@ -17,4 +18,19 @@ export class AppComponent {
       data: {},
     });
   }
+
+
+  selectedValue: string='';
+  foods = [
+    {value: 'CSE', viewValue: 'CSE'},
+    {value: 'EIE', viewValue: 'EIE'},
+    {value: 'IT', viewValue: 'IT'},
+  ];
+  data(){
+    console.log(this.selectedValue);
+    
+  }
+  
+
+  
 }

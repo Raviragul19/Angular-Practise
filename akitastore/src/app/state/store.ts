@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
 import { EntityStore, StoreConfig } from '@datorama/akita';
-import { list } from '../list';
+import { Students } from '../studentsdata';
 
-const intialListState: list[] = [
+const intialListState: Students[] = [
   {
     id: '',
     name: '',
     city: '',
+    department:''
   },
 ];
 
 @Injectable({
   providedIn: 'root',
 })
-@StoreConfig({ name: 'list' })
-export class ListStore extends EntityStore<list[]> {
+@StoreConfig({ name: 'Students' })
+export class ListStore extends EntityStore<Students[]> {
   constructor() {
     super(intialListState);
   }
+
 }
