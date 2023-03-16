@@ -1,0 +1,13 @@
+<div *ngFor="let key of data">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-subtitle>{{ key.id }}</mat-card-subtitle>
+      <mat-card-title>{{ key.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ key.city }}</p>
+      <p>{{ key.department }}</p>
+    </mat-card-content>
+    <app-menu [department]="key.department"></app-menu>
+  </mat-card>
+</div>
