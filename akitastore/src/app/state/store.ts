@@ -14,10 +14,11 @@ const intialListState: Students[] = [
 @Injectable({
   providedIn: 'root',
 })
+
 @StoreConfig({ name: 'Students' })
+
 export class ListStore extends EntityStore<Students[]> {
   constructor() {
     super(intialListState);
   }
-
 }

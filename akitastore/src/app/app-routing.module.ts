@@ -5,9 +5,7 @@ import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: 'list', component: ListComponent},
-  { path: 'search', 
-  loadChildren: () =>
-  import('./search/search.component').then((m) => m. SearchComponent), 
+  { path: 'search', component: SearchComponent, 
 },
 ]
 
