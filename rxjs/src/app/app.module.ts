@@ -7,12 +7,14 @@ import { BasicsComponent } from './basics/basics.component';
 import { OperatorsComponent } from './operators/operators.component';
 import { SubjectComponent } from './subject/subject.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     BasicsComponent,
     OperatorsComponent,
-    SubjectComponent
+    SubjectComponent,
+ 
   ],
   imports: [
     BrowserModule,
