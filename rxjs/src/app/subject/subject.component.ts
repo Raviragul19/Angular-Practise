@@ -34,6 +34,7 @@ replaySubject(){
   replay.next(2);
   replay.subscribe((res)=>console.log('Replaysubject value ' ,res));  //it will emit 2,3
   replay.next(3);  
+  replay.next(4);
 }
 
 asyncSubject(){
