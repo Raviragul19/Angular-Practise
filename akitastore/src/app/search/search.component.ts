@@ -8,17 +8,20 @@ import { ListQuery } from '../state/query';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-  public data: any = [];
-
+  public data: any ;
+public length:string='';
   constructor(
     private rawData: DataserviceService,
     public studentQuery: ListQuery
   ) {}
+  
 
   ngOnInit() {
     this.rawData.getRawData();
     this.studentQuery.SearchState$.subscribe((res) => {
-      this.data = res;
+      this.data = res;    
+     this.length= this.data.length;             
     });
+    
   }
 }

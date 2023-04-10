@@ -21,6 +21,7 @@ export class MenuComponent {
       data: { id: this.id, name: this.name, city: this.city ,department: this.department },
     });    
   }
+  
 
   openDelete() {
     const dialogRef = this.input.open(DeleteComponent, {

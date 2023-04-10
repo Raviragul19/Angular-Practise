@@ -1,25 +1,31 @@
 <div class="container">
-<h1><b> Students List</b> </h1>
-<h4>Powered By Akita </h4>
-<br>
+  <h1><b> Students List</b></h1>
+  <h4>Powered By Akita</h4>
+  <br />
 </div>
-<div >
-<a  routerLink="/list">    
-  <button mat-raised-button color="primary"class='but'>List</button> 
+<div>
+  <a routerLink="/list">
+    <button mat-raised-button color="primary" class="but">List</button>
   </a>
-  <button mat-raised-button (click)="openDialog()" color="primary" class="but">Add</button>
-  <a  routerLink="/search"  color="primary" class="search">    
-     <mat-form-field appearance="fill">
+  <button mat-raised-button (click)="openDialog()" color="primary" class="but">
+    Add
+  </button>
+  <a color="primary" class="search">
+    <mat-form-field appearance="fill">
       <mat-label>Departments</mat-label>
-      <mat-select [(ngModel)]="selectedValue" name="food">
-        <mat-option *ngFor="let food of foods" [value]="food.value">
-          {{food.viewValue}}
-          <button (click)='data()'>data</button>
+      <mat-select [(ngModel)]="selectedValue" name="department">
+        <mat-option
+          *ngFor="let key of department"
+          [value]="key.value"
+          (click)="data()"
+          routerLink="/search"
+        >
+          {{ key.viewValue }}
         </mat-option>
       </mat-select>
-    </mat-form-field> 
-    </a>
-  <div class="scroll">  
-  <router-outlet></router-outlet>
-</div>
+    </mat-form-field>
+  </a>
+  <div class="scroll">
+    <router-outlet></router-outlet>
+  </div>
 </div>

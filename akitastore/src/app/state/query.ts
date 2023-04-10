@@ -2,24 +2,27 @@ import { QueryEntity } from '@datorama/akita';
 import { ListStore } from './store';
 import { Students } from '../studentsdata';
 import { Observable } from 'rxjs';
-import { Injectable, Input} from '@angular/core';
-//import{AppComponent} from '../app.component'
+import { Injectable} from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root',
 })
 
 export class ListQuery extends QueryEntity<Students[]> {
+
+  value:string='';
+
   constructor(private studentStore: ListStore,
-    //private data:AppComponent
     ) {
     super(studentStore);
   }
-  allState$: Observable<unknown[]> = this.selectAll();
+  
+  allState$: Observable<unknown[]> = this.selectAll();  //displaying all value
 
+  
+  SearchState$: Observable<any> = this.selectAll({            //displaying only selected value
+    filterBy: (entity: any) => entity.department === this.value });
 
-  @Input() value: string='';
-  SearchState$: Observable<unknown> = this.selectAll({
-    filterBy: (entity: any) => entity.department === 'CSE'
-  });
+  
 }
