@@ -18,7 +18,7 @@ export class ListComponent {
   ngOnInit() {
     this.rawData.getRawData();
     this.studentQuery.allState$.subscribe((res) => {
-      this.data = res;
+      this.data = res;      
     });
   }
 }

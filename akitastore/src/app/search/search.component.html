@@ -1,3 +1,4 @@
+<h1>Total count that match with your choice:  {{length}}</h1>
 <div *ngFor="let key of data">
   <mat-card class="example-card">
     <mat-card-header>
@@ -8,6 +9,5 @@
       <p>{{ key.city }}</p>
       <p>{{ key.department }}</p>
     </mat-card-content>
-    <app-menu [department]="key.department"></app-menu>
   </mat-card>
 </div>

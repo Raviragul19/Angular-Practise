@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { AddComponent } from './add/add.component';
+import { ListQuery } from './state/query';
 
 @Component({
   selector: 'app-root',
@@ -11,26 +12,23 @@ import { AddComponent } from './add/add.component';
 export class AppComponent {
   title = 'akitastore';
 
-  constructor(private input: MatDialog) {}
+  selectedValue: string = '';
+  department = [
+    { value: 'CSE', viewValue: 'CSE' },
+    { value: 'EIE', viewValue: 'EIE' },
+    { value: 'IT', viewValue: 'IT' },
+  ];
+
+  constructor(private input: MatDialog, public studentQuery: ListQuery) {}
+
   openDialog(): any {
     const dialogRef = this.input.open(AddComponent, {
-      //data: { id: this.id, name: this.name },
       data: {},
     });
   }
 
-
-  selectedValue: string='';
-  foods = [
-    {value: 'CSE', viewValue: 'CSE'},
-    {value: 'EIE', viewValue: 'EIE'},
-    {value: 'IT', viewValue: 'IT'},
-  ];
-  data(){
-    console.log(this.selectedValue);
-    
+  data() {
+    this.studentQuery.value = this.selectedValue;
   }
-  
-
   
 }
